@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg" {
-    name     = "rg-staticsite-lb-multicloud-tf-matheusg"
+    name     = "rg-staticsite-lb-multicloud-tf-matheusg123"
     location = "brazilsouth"
 }
 
