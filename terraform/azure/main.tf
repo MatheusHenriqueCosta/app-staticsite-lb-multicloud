@@ -290,7 +290,7 @@ resource "azurerm_lb_rule" "lb" {
     frontend_port                  = 80
     backend_port                   = 80
     frontend_ip_configuration_name = "lb"
-    backend_address_pool_ids       = [azurerm_lb_backend_address_pool.lb.id]
+    backend_address_pool_ids       = [azurerm_network_interface_backend_address_pool_association.id]
     load_distribution              = "SourceIPProtocol"
 }
 
