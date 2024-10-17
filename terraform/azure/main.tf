@@ -299,7 +299,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "vm01" {
     network_interface_id    = azurerm_network_interface.vm01.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.lb.id
 }
-
+#
 resource "azurerm_network_interface_backend_address_pool_association" "vm02" {
     ip_configuration_name   = "vm02"
     network_interface_id    = azurerm_network_interface.vm02.id
