@@ -50,17 +50,6 @@ resource "azurerm_network_security_group" "nsgvm" {
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
-    security_rule {
-        name                       = "Allow Outbound"
-        priority                   = 1000
-        direction                  = "Outbound"
-        access                     = "Allow"
-        protocol                   = "*"
-        source_port_range          = "*"
-        destination_port_range     = "*"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    }
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsgsubnet1a" {
@@ -302,7 +291,7 @@ resource "azurerm_lb_rule" "lb" {
     backend_port                   = 80
     frontend_ip_configuration_name = "lb"
     backend_address_pool_ids       = [azurerm_lb_backend_address_pool.lb.id]
-    load_distribution              = "SourceIPProtocol"
+    load_distribution              = "SourceIP"
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "vm01" {
